@@ -1,5 +1,7 @@
 package gabrielpedrico.transacao.dtos;
 
+import gabrielpedrico.transacao.models.Compra;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Map;
@@ -61,5 +63,9 @@ public class TransacaoResponse {
                 ", cartao=" + cartao +
                 ", efetivadaEm=" + efetivadaEm +
                 '}';
+    }
+
+    public Compra conversor(){
+        return new Compra(this.valor,this.id,this.efetivadaEm);
     }
 }
